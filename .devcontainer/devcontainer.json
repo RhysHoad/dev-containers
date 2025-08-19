@@ -1,0 +1,38 @@
+{
+    "name": "RHDevcontainer",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "HTTP_PROXY": "http://eproxy-s-eu.de.goskope.com:8081",
+            "HTTPS_PROXY": "http://eproxy-s-eu.de.goskope.com:8081",
+            "NO_PROXY": ".corp"
+        }
+    },
+    "extensions": [
+        "ms-python.python",
+        "esbenp.prettier-vscode",
+        "ms-python.black-formatter",
+        "ms-python.flake8",
+        "ms-python.pylint",
+        "pre-commit.pre-commit-vscode",
+        "hashicorp.terraform",
+        "trilogyinteractive.vscode-terraform",
+        "dbaeumer.vscode-eslint",
+        "pkief.material-icon-theme"
+    ],
+    "settings": {
+        "python.formatting.provider": "black",
+        "python.linting.flake8enabled": true,
+        "python.linting.enabled": true,
+        "editor.codeActionsOnSave": {
+            "editor.formatOnSave": true,
+            "source.organizeImports": true,
+            "[terraform]": {
+                "editor.defaultFormatter": "hashicorp.terraform",
+                "editor.formatOnSave": true,
+                "editor.tabSize": 2
+            }
+        },
+        "postCreateCommand": "pip install black flake8 pre-commit && pre-commit install"
+    }
+}
