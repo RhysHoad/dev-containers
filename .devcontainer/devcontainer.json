@@ -1,12 +1,7 @@
 {
     "name": "RHDevcontainer",
     "build": {
-        "dockerfile": "Dockerfile",
-        "args": {
-            "HTTP_PROXY": "http://eproxy-s-eu.de.goskope.com:8081",
-            "HTTPS_PROXY": "http://eproxy-s-eu.de.goskope.com:8081",
-            "NO_PROXY": ".corp"
-        }
+        "dockerfile": "Dockerfile"
     },
     "extensions": [
         "ms-python.python",
